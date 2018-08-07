@@ -1,0 +1,137 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: #ddd;
+}
+
+.header {
+  background: white;
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+
+  .header-content {
+    margin: 0 auto;
+    max-width: 930px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    input {
+      display: none;
+    }
+
+    @media (min-width: 700px) {
+      input {
+        display: block;
+      }
+    }
+  }
+}
+
+.main-nav > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav > ul > li {
+  display: inline-block;
+}
+
+main {
+  border: 3px dashed red;
+  max-width: 930px;
+  margin: 4rem auto;
+
+  .feed-nav {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid grey;
+
+    a {
+      padding: 10px;
+    }
+  }
+}
+
+.logo {
+  border-radius: 50%;
+  width: 152px;
+}
+
+.user-info {
+  border: 3px dashed blue;
+  display: grid;
+  padding: 10px;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(3, auto);
+
+  @media (min-width: 700px) {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  .avatar {
+    border-radius: 50%;
+    width: 100px;
+
+    @media (min-width: 700px) {
+      grid-row: 1 / -1; // make avatars row to span 100% height
+      width: 150px;
+      align-self: center;
+      justify-self: center;
+    }
+  }
+
+  .user-stats {
+    grid-column: 1 / -1;
+    grid-row: 3; // tell element to be in row number 3
+    display: flex;
+    justify-content: space-around;
+
+    @media (min-width: 700px) {
+      grid-column: auto;
+      grid-row: auto;
+      display: block;
+    }
+
+  }
+
+  .description {
+    grid-column: 1 / -1; // tell element it will be 100% of the grid
+    @media (min-width: 700px) {
+      grid-column: auto;
+    }
+  }
+
+}
+
+.news-feed {
+  border: 3px dashed blue;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+
+  @media (min-width: 700px) {
+    grid-gap: 28px;
+  }
+
+  img {
+    width: 100%;
+  }
+}

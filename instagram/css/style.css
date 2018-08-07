@@ -1,0 +1,132 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: #ddd;
+}
+
+.header {
+  background: white;
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+}
+.header .header-content {
+  margin: 0 auto;
+  max-width: 930px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .header-content input {
+  display: none;
+}
+@media (min-width: 700px) {
+  .header .header-content input {
+    display: block;
+  }
+}
+
+.main-nav > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav > ul > li {
+  display: inline-block;
+}
+
+main {
+  border: 1px dashed red;
+  max-width: 930px;
+  margin: 4rem auto;
+}
+main .feed-nav {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid grey;
+}
+main .feed-nav a {
+  padding: 10px;
+}
+
+.logo {
+  border-radius: 50%;
+  width: 152px;
+}
+
+.user-info {
+  border: 1px dashed blue;
+  display: grid;
+  padding: 10px;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(3, auto);
+}
+@media (min-width: 700px) {
+  .user-info {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+.user-info h1 {
+  margin: 0;
+}
+.user-info .avatar {
+  border-radius: 50%;
+  width: 100px;
+}
+@media (min-width: 700px) {
+  .user-info .avatar {
+    grid-row: 1 / -1;
+    width: 150px;
+    align-self: center;
+    justify-self: center;
+  }
+}
+.user-info .user-stats {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  display: flex;
+  justify-content: space-around;
+}
+@media (min-width: 700px) {
+  .user-info .user-stats {
+    grid-column: auto;
+    grid-row: auto;
+    display: block;
+  }
+}
+.user-info .description {
+  grid-column: 1 / -1;
+}
+@media (min-width: 700px) {
+  .user-info .description {
+    grid-column: auto;
+  }
+}
+
+.news-feed {
+  border: 1px dashed blue;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+}
+@media (min-width: 700px) {
+  .news-feed {
+    grid-gap: 28px;
+  }
+}
+.news-feed img {
+  width: 100%;
+}
